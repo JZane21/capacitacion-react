@@ -24,47 +24,12 @@ import { Content } from './components/Content';
 
 function App() {
   // const [count, setCount] = useState(0);
-  const textos = [
-    {
-      conductor: "conductor - 1",
-      placa: "placa - 1",
-      horaIngreso: "hora - 1",
-    },
-    {
-      conductor: "conductor - 2",
-      placa: "placa - 2",
-      horaIngreso: "hora - 2",
-    },
-    {
-      conductor: "conductor - 3",
-      placa: "placa - 3",
-      horaIngreso: "hora - 3",
-    },
-  ];
 
   return (
-    <>
+    <div className='bg-slate-100'>
       <Header/>
-      
-      <main className="
-      flex
-      flex-row
-      ">
-        {/* <Formulario/>
-        <Auto>
-          {
-            textos.map(informacion => (
-              <Card 
-                conductor = {informacion.conductor}
-                placa = {informacion.placa}
-                horaIngreso = {informacion.horaIngreso}
-              />
-            ))
-          }
-        </Auto> */}
-        <Content/>
-      </main>
-    </>
+      <Content/>
+    </div>
   );
 }
 
