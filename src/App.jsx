@@ -26,7 +26,7 @@ function App() {
   // const [count, setCount] = useState(0);
 
   return (
-    <div className='bg-slate-100'>
+    <div>
       <Header/>
       <Content/>
     </div>
