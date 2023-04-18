@@ -1,5 +1,6 @@
-// import { BsPencilSquare,BsFillTrashFill } from "react-icons/fa";
-import { FiCheck, FiX } from "react-icons/fi";
+// import { FaUbuntu, FaTwitter } from "react-icons/fa";
+import { FiEdit2 } from "react-icons/fi";
+import { AiFillDelete } from "react-icons/ai";
 export const ButtonTypeOne = (props) => {
     const tipoSimbolo = props.tipoSimbolo.toLowerCase();
     const accion = props.accion;
@@ -19,8 +20,8 @@ export const ButtonTypeOne = (props) => {
     "
     onClick={accion}
     >
-        {tipoSimbolo === "editar" && <FiCheck/>}
-        {tipoSimbolo === "eliminar" && <FiX/>}
+        {tipoSimbolo === "editar" && <FiEdit2/>}
+        {tipoSimbolo === "eliminar" && <AiFillDelete/>}
     </button>
   )
 }
