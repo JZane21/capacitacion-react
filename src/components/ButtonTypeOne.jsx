@@ -8,8 +8,6 @@ export const ButtonTypeOne = (props) => {
     <button
     className="
     relative
-    border-black
-    border-2
     rounded-lg
     p-2
     pb-2
@@ -17,6 +15,11 @@ export const ButtonTypeOne = (props) => {
     mt-3
     ml-2
     mr-2
+    bg-indigo-500
+    hover:bg-indigo-700
+    active:bg-indigo-300
+    text-white
+
     "
     onClick={accion}
     >
