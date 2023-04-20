@@ -11,7 +11,7 @@ export const BottonRegistrar = () => {
         font-bold
         mt-3
         ">
-            Agregar
+          Agregar
         </button>
     </div>
   )
