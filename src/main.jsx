@@ -7,7 +7,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-)
+);
 
 // Dist.-
 // carpeta para generar el html y el css, de forma que puedan ser ejecutados

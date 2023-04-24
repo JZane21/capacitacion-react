@@ -1,11 +1,16 @@
 import { Card } from "./Card";
+// import { useLocalStorage } from './useLocalStorage'
 export const Auto = (props) => {
 
   // forma 1
   // const listaAutos = props.listaAutos;
 
   // forma 2
-  const {listaAutos} = props;
+  const listaAutos = props.listaAutos;
+  const setListaAutos = props.setListaAutos;
+  const setOpenModal = props.setOpenModal;
+  const openModal = props.openModal;
+  const setConductorAEditar=props.setConductorAEditar;
 
   return (
     <div className="md:w-1/2 overflow-y-scroll">
@@ -14,7 +19,14 @@ export const Auto = (props) => {
         Auto Registrado
       </p>
       { listaAutos.map(conductor => (
-        <Card person={conductor} key={conductor.plate}/>
+        <Card
+        person={conductor}
+        listaAutos={listaAutos}
+        setListaAutos={setListaAutos}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        setConductorAEditar={setConductorAEditar}
+        key={conductor.plate}/>
       )) }
     </div>
   );

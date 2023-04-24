@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { BottonRegistrar } from "./BottonRegistrar"
+import { Error } from "./Error";
+// import { actualizandoAutos } from "./ActualizandoAutos";
 
 export const Formulario = (props) => {
 
@@ -11,14 +13,35 @@ export const Formulario = (props) => {
 
   const[registerDate,setRegisterDate] = useState('');
 
+  const[error,setError] = useState(false);
+
   const handleSubmit = (evento) => {
     // haciendo que la app no cruce el camino antes de mirar
     evento.preventDefault();
-    setListaAutos([...listaAutos,{
-      plate,
-      name,
-      registerDate
-    }]);
+
+    // forma 1
+    // plate!=='' && name!=='' && registerDate!==''
+    // forma 2
+    // [name,plate,registerDate].includes(undefined)
+    
+    if(![name,plate,registerDate].includes('')){
+      // const funcionExtra = () => {
+      //   const {
+      //     item
+      //   } = actualizandoAutos(plate,name,registerDate,setListaAutos,listaAutos);
+      //   setListaAutos(item);
+      // };
+      // funcionExtra();
+
+      setListaAutos([...listaAutos,{
+        plate,
+        name,
+        registerDate
+      }]);
+      setError(false);
+    }else{
+      setError(true);
+    }
   };
 
   return (
@@ -30,6 +53,10 @@ export const Formulario = (props) => {
       <form className="grid bg-white p-10 rounded-lg shadow-lg ml-10 mr-5 mt-2"
       onSubmit={handleSubmit}
       >
+        <Error
+        error = {error}
+        errorApp = "Datos necesarios"
+        />
         <label className="font-bold">
           Numero Placa
         </label>

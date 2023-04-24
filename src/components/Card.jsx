@@ -3,13 +3,31 @@ import { ButtonTypeOne } from "./ButtonTypeOne";
 export const Card = (props) => {
 
   const {name,plate,registerDate} = props.person;
+  const openModal = props.openModal;
+  const setOpenModal = props.setOpenModal;
+  const setConductorAEditar = props.setConductorAEditar;
+
+  const listaAutos = props.listaAutos;
+  const setListaAutos = props.setListaAutos;
 
   const mensajeEditar = () => {
-    alert("EDITANDO");
+    // alert("EDITANDO");
+    if(openModal){
+      setOpenModal(false);
+    }else{
+      setConductorAEditar(props.person);
+      setOpenModal(true);
+    }
+
   };
 
   const mensajeEliminando = () => {
-    alert("ELIMINANDO");
+    // alert("ELIMINANDO");
+    setListaAutos(listaAutos);
+    const Index = listaAutos.findIndex(conductor => conductor.plate === plate);
+    const nuevaListaAutos = [...listaAutos];
+    nuevaListaAutos.splice(Index,1);
+    setListaAutos(nuevaListaAutos);
   };
 
   return (
@@ -39,7 +57,7 @@ export const Card = (props) => {
         <span className="font-normal normal-case">{registerDate}</span>
       </p>
 
-      <div  className="flex flex-row-reverse">
+      <div  className="flex flex-row-reverse z-10">
         <ButtonTypeOne 
           tipoSimbolo="editar"
           accion={mensajeEditar}
@@ -50,7 +68,6 @@ export const Card = (props) => {
           accion={mensajeEliminando}
         />
       </div>
-
     </div>
   );
 
