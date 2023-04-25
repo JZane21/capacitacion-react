@@ -23,7 +23,6 @@ export const Card = (props) => {
 
   const mensajeEliminando = () => {
     // alert("ELIMINANDO");
-    setListaAutos(listaAutos);
     const Index = listaAutos.findIndex(conductor => conductor.plate === plate);
     const nuevaListaAutos = [...listaAutos];
     nuevaListaAutos.splice(Index,1);

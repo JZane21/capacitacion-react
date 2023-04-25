@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { Card } from "./Card";
+import { useLocalStorage } from "./useLocalStorage";
 // import { useLocalStorage } from './useLocalStorage'
 export const Auto = (props) => {
 
@@ -11,6 +13,13 @@ export const Auto = (props) => {
   const setOpenModal = props.setOpenModal;
   const openModal = props.openModal;
   const setConductorAEditar=props.setConductorAEditar;
+
+  useEffect(() => {
+    const {
+      item,
+      saveItem
+    } = useLocalStorage('BD_1',[]);
+  },[])
 
   return (
     <div className="md:w-1/2 overflow-y-scroll">

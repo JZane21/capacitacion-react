@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 function useLocalStorage (itemName, initialValue) {
 
     // inicializando una variable para el useState
-    const [item, setItem] = React.useState(initialValue);
+    const [item, setItem] = useState(initialValue);
 
     // obteniendo el valor de un item del localStorage
     const localStorageItem = localStorage.getItem(itemName);
